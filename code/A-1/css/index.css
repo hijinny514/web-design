@@ -1,0 +1,387 @@
+@charset "utf-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+/* float해제를 위한 클래스 */
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    color: #333;
+    background-color: #fff;
+}
+
+header {
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+header .logo {
+    float: left;
+}
+
+header .logo a {
+    display: block;
+}
+
+header .logo a img {
+    display: block;
+    height: 40px;
+    margin-top: 30px;
+}
+
+header .menu {
+    float: right;
+    width: 600px;
+    margin-top: 25px;
+    text-align: center;
+
+    position: relative;
+    /* .lnb의 기준! */
+}
+
+header .menu .gnb {
+    /* background-color: greenyellow; */
+}
+
+header .menu .gnb li {
+    width: 25%;
+    float: left;
+}
+
+header .menu .gnb li a {
+    line-height: 50px;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+header .menu .gnb li a:hover {
+    background-color: #5D5A88;
+    color: #fff;
+}
+
+header .menu .lnb {
+    width: 100%;
+    background-color: #eee;
+    position: absolute;
+
+    display: none; /* 구현을 위한 초기설정 */
+}
+
+header .menu .lnb ul {
+    width: 25%;
+    float: left;
+}
+
+header .menu .lnb ul li {
+    line-height: 40px;
+        color: #555;
+}
+
+header .menu .lnb ul li a:hover {
+    background-color: #ccc;
+}
+
+section {
+    width: 1200px;
+    /* 본문 전체너비 일괄조절 */
+    margin: 0 auto;
+}
+
+/* 
+.slide : 슬라이드가 실제 보여지는 공간
+.slide .viewer : (슬라이드) 전체를 담는 부모
+.slide .viewer li : 각 슬라이드!
+*/
+article.slide {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+article.slide .viewer {
+    width: 100%;
+    height: 300%;
+}
+
+article.slide .viewer li {
+    width: 100%;
+    height: 33.33%;
+}
+
+article.slide .viewer li img {
+    display: block;
+    height: 100%;
+}
+
+
+article.content {
+    width: 100%;
+    height: 200px;
+    /* outline: 2px solid red; */
+}
+
+article.content>div {
+    float: left;
+    margin: 10px 0;
+}
+
+article.content>div.con1 {
+    width: 38%;
+    margin-right: 2%;
+}
+
+div.con1 .tab-menu {}
+
+div.con1 .tab-menu li {
+    float: left;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+
+    text-align: center;
+}
+
+div.con1 .tab-menu li:first-child {
+    border-left: 1px solid #ccc;
+}
+
+div.con1 .tab-menu li a {
+    color: #555;
+}
+
+/* 선택된 탭메뉴 디자인 변경 */
+div.con1 .tab-menu li.active {
+    background-color: #9795b5;
+}
+
+div.con1 .tab-menu li.active a {
+    color: #fff;
+}
+
+
+div.con1 .tab-content {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 140px;
+    box-sizing: border-box;
+}
+
+
+
+/* 탭 컨텐츠 - 공지사항 */
+div.con1 .tab-content .notice {}
+
+.notice-list li {
+    line-height: 30px;
+    color: #333;
+}
+.notice-list li:nth-child(2n) {
+    background-color: lightgoldenrodyellow;
+}
+
+.notice-list li::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.notice-list li p:first-child {
+    float: left;
+}
+
+.notice-list li p:last-child {
+    float: right;
+    color: #666;
+    font-size: 15px;
+}
+
+
+.notice-list li a:hover {
+    text-decoration: underline;
+}
+
+.notice-list li a span {
+    color: tomato;
+}
+
+/* 탭 컨텐츠 - 갤러리 */
+div.con1 .tab-content .gallery {
+    display: none;
+    /* 구현을 위한 초기설정 */
+}
+
+.gallery-list li {
+    float: left;
+}
+
+.gallery-list li~li {
+    margin-left: 10px;
+}
+
+.gallery-list li a img {
+    height: 120px;
+    display: block;
+}
+
+
+article.content>div.con2 {
+    width: 29%;
+    margin-right: 2%;
+    height: 180px;
+}
+article.content>div.con2 a {
+    width: 100%;
+    height: 100%;
+}
+
+article.content>div.con2 img {
+    width: 100%;
+    height: 100%; /* 시험에서는 실제 크기에 맞춰서 이미지를 제작하고 width만 설정하세요. 지금은 동일한 이미지를 사용하는 거라 크기 맞추기 위해 height값을 일부러 넣어놨어요. */
+    display: block;
+    border-radius: 12px;
+}
+
+article.content>div.con3 {
+    width: 29%;
+    height: 180px;
+}
+article.content>div.con3 a {
+    width: 100%;
+    height: 100%;
+}
+
+article.content>div.con3 img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+
+/*****************************************************/
+
+/* 레이어팝업 */
+#popup {
+    width: 500px;
+    background-color: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    box-shadow: 0 0 8px #999;
+
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: none;
+    /* 구현을 위한 초기설정 */
+}
+
+#popup .popup-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#popup .popup-box p {
+    margin-bottom: 30px;
+}
+
+#popup .popup-box .btn-close {
+    text-align: center;
+}
+
+#popup .popup-box .btn-close span {
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/*****************************************************/
+
+
+footer {
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: #eee;
+}
+
+footer>div {
+    float: left;
+}
+
+footer .footer-logo {
+    width: 200px;
+}
+
+footer .footer-logo img {
+    display: block;
+    height: 40px;
+    margin-top: 30px;
+}
+
+footer .copyright {
+    width: 750px;
+}
+
+footer .copyright p {
+    line-height: 100px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+footer .sns {
+    width: 250px;
+}
+
+footer .sns ul {
+    text-align: right;
+}
+
+footer .sns ul li {
+    line-height: 100px;
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+footer .sns ul li a {
+    color: #666;
+}
+
+footer .sns ul li a:hover {
+    color: #333;
+    text-decoration: underline;
+}

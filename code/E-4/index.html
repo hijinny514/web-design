@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>철길 마을</title>
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script src="script/index.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- 상단 -->
+        <div class="top">
+            <header>
+                <h1 class="logo"><a href="#"><img src="images/logo.png" alt="철길마을 로고"></a></h1>
+
+                <nav class="menu">
+                    <ul class="gnb">
+                        <li>
+                            <a href="#">철길 마을</a>
+                            <ul class="lnb">
+                                <li><a href="#">마을 소개</a></li>
+                                <li><a href="#">마을의 유래</a></li>
+                                <li><a href="#">볼거리</a></li>
+                                <li><a href="#">찾아오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">주변 맛집</a>
+                            <ul class="lnb">
+                                <li><a href="#">빵집</a></li>
+                                <li><a href="#">간장게장</a></li>
+                                <li><a href="#">중국음식점</a></li>
+                                <li><a href="#">횟집</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">주변 여행지</a>
+                            <ul class="lnb">
+                                <li><a href="#">은파호수공원</a></li>
+                                <li><a href="#">초원사진관</a></li>
+                                <li><a href="#">월명공원</a></li>
+                                <li><a href="#">진포해양공원</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">도움마당</a>
+                            <ul class="lnb">
+                                <li><a href="#">교통정보</a></li>
+                                <li><a href="#">주변 주차장</a></li>
+                                <li><a href="#">자료실</a></li>
+                                <li><a href="#">자료마당</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section class="content">
+                <!-- 배너(C.1) -->
+                <article class="banner">
+                    <a href="#">
+                        <div class="img-box"><img src="images/banner.jpg" alt="배너 이미지"></div>
+                        <div class="txt">
+                            <h2>철길마을 사진 콘테스트</h2>
+                            <p>철길마을 사진 콘테스트<br>참가자를 모집합니다.</p>
+                        </div>
+                        <div class="arrow">
+                            <img src="images/arrow.png" alt="배너 바로가기">
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 공지사항(C.2) -->
+                <article class="notice">
+                    <h2 class="title">공지사항</h2>
+
+                    <ul class="notice-list">
+                        <li>
+                            <a href="#">2025 철길마을 여름축제 안내</a>
+                            <span>2025.08.04</span>
+                        </li>
+                        <li>
+                            <a href="#">철도 체험 프로그램 사전 예약 오픈!</a>
+                            <span>2025.08.01</span>
+                        </li>
+                        <li>
+                            <a href="#">철길마을 주차장 이용 안내</a>
+                            <span>2025.07.15</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 갤러리(C.3) -->
+                <article class="gallery">
+                    <h2 class="title">갤러리</h2>
+
+                    <ul class="gallery-list">
+                        <li>
+                            <a href="#">
+                                <img src="images/gallery1.jpg" alt="갤러리1">
+                                <p>철길마을 풍경1</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/gallery2.jpg" alt="갤러리2">
+                                <p>철길마을 풍경2</p>
+                            </a>
+
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 바로가기(C.4) -->
+                <article class="go">
+                    <h2 class="hide">바로가기</h2>
+
+                    <ul class="go-list">
+                        <li>
+                            <a href="#">
+                                <img src="images/icon.jpg" alt="바로가기1">
+                                <p>Link1</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/icon.jpg" alt="바로가기2">
+                                <p>Link2</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/icon.jpg" alt="바로가기3">
+                                <p>Link3</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/icon.jpg" alt="바로가기4">
+                                <p>Link4</p>
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+
+            <section class="slide">
+                <ul class="viewer clear">
+                    <li><img src="images/slide1.jpg" alt="슬라이드1"></li>
+                    <li><img src="images/slide2.jpg" alt="슬라이드2"></li>
+                    <li><img src="images/slide3.jpg" alt="슬라이드3"></li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- 모달 레이어 팝업 -->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <h3>철길마을 여름축제 안내</h3>
+                <p>
+                    2025 철길마을 여름 축제가 열립니다.<br><br>
+                    기간: 2025년 8월 23일 ~ 8월 25일<br>
+                    장소: 철길마을 중앙광장 및 철도박물관 앞<br>
+                    주요 프로그램: 야외 버스킹 공연, 철도 체험, 야시장 운영<br>
+                    방문객 선착순 300명 기념품 증정<br><br>
+                    많은 참여와 관심 바랍니다.
+                </p>
+                <button class="btn-close">닫기</button>
+            </div>
+        </div>
+
+        <!-- 하단 -->
+        <footer>
+            <div class="footer-logo"><img src="images/logo_gray.png" alt="철길마을 회색로고"></div>
+
+            <div class="fbox">
+                <ul class="links">
+                    <li><a href="#">Footermenu1</a></li>
+                    <li><a href="#">Footermenu2</a></li>
+                    <li><a href="#">Footermenu3</a></li>
+                    <li><a href="#">Footermenu4</a></li>
+                    <li><a href="#">Footermenu5</a></li>
+                    <li><a href="#">Footermenu6</a></li>
+                </ul>
+
+                <p class="copy">COPYRIGHT &copy; by WEBDESIGN. ALL RIGHTS RESERVED</p>
+            </div>
+
+            <div class="family-site">
+                <select>
+                    <option>패밀리사이트</option>
+                    <option>철길역사박물관</option>
+                    <option>철도문화체험관</option>
+                    <option>철도 테마파크</option>
+                </select>
+            </div>
+        </footer>
+    </div>
+
+
+</body>
+
+</html>

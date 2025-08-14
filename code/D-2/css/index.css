@@ -1,0 +1,342 @@
+@charset "utf-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+/* float해제를 위한 클래스 */
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    color: #333;
+    background-color: #fff;
+}
+
+.wrap {
+    width: 100%;
+    display: flex;
+}
+
+header {
+    width: 200px;
+    background-color: #f3f3f3;
+    /* background-color: yellow; */
+}
+
+header .logo {
+    padding: 30px 0;
+}
+
+header .logo img {
+    height: 40px;
+    display: block;
+}
+
+header .menu {
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header .menu .gnb>li>a {
+    line-height: 50px;
+    background-color: #D4D2E3;
+    font-size: 18px;
+}
+
+header .menu .gnb>li>a:hover {
+    background-color: #5D5A88;
+    color: #fff;
+    font-weight: bold;
+}
+
+header .menu .lnb {
+    background-color: #fff;
+
+    display: none;
+    /* 구현을 위한 초기설정 */
+}
+
+header .menu .lnb li {
+    line-height: 40px;
+    color: #555;
+    font-size: 16px;
+}
+
+header .menu .lnb li a:hover {
+    background-color: #ccc;
+}
+
+
+section {
+    width: calc(100% - 200px);
+}
+
+section .content1 {
+    display: flex;
+    /* flex되는 아이템은 .slide와 .banner! */
+}
+
+/*  슬라이드 */
+article.slide {
+    width: calc(100% - 230px);
+    height: 400px;
+    overflow: hidden;
+}
+
+article.slide .viewer {
+    width: 300%;
+    height: 100%;
+}
+
+article.slide .viewer li {
+    width: 33.33%;
+    height: 100%;
+    float: left;
+}
+
+article.slide .viewer li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* 배너(C.1) */
+article.banner {
+    width: 230px;
+    height: 400px;
+    background-color: #000;
+
+    position: relative; /* .arrow의 기준! */
+}
+
+article.banner a {
+    padding: 10px;
+}
+article.banner .img-box {
+    margin: 20px 0 40px;
+}
+article.banner .img-box img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+}
+
+article.banner .txt {}
+
+article.banner .txt h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+article.banner .txt p {
+    letter-spacing: -0.5px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+article.banner .arrow {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    text-align: center;
+
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+
+
+section .content2 {
+    width: 100%;
+    height: 250px;
+    display: flex;
+}
+section .content2 > article {
+    width: 50%;
+    padding: 20px 30px;
+    box-sizing: border-box;
+}
+
+/* 공지사항, 갤러리 h2, ul 공통 */
+section .content2 h2.title {
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    padding: 0 30px;
+    color: #fff;
+    background-color: #8D8BA7;
+    border-radius: 10px 10px 0 0;
+}
+
+section .content2 ul.notice-list,
+section .content2 ul.gallery-list {
+    border-top: 3px solid #8D8BA7;
+    background-color: #fff;
+}
+
+/* 공지사항(C.2) */
+
+article.notice li {
+    line-height: 40px;
+    padding: 0 5px;
+    border-bottom: 1px solid #ccc;
+}
+article.notice li:nth-child(2n-1) {
+    background-color: #eee;
+}
+article.notice li::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+article.notice li a {
+    float: left;
+}
+article.notice li span {
+    color: #777;
+    float: right;
+}
+
+article.notice li:hover {
+    background-color: lightgoldenrodyellow;
+}
+article.notice li a:hover {
+    text-decoration: underline;
+}
+
+
+/* 갤러리(C.3) */
+article.gallery .gallery-list {
+    padding: 20px;
+}
+
+article.gallery li {
+    float: left;
+    text-align: center;
+}
+article.gallery li~li {
+    margin-left: 20px;
+}
+article.gallery li img {
+    width: 130px;
+    display: block;
+    margin-bottom: 8px;
+}
+article.gallery li p {
+    color: #555;
+}
+
+
+/*****************************************************/
+
+/* 모달 레이어 팝업 */
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99;
+
+    display: none;
+    /* 구현을 위한 초기설정! */
+}
+
+.modal .modal-content {
+    width: 500px;
+    background-color: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 12px;
+
+    position: absolute;
+    /* .modal 기준으로 위치설정! */
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-align: center;
+}
+
+.modal .modal-content h3 {
+    margin-bottom: 20px;
+}
+
+.modal .modal-content p {
+    margin-bottom: 30px;
+}
+
+.modal .modal-content .btn-close {
+    background-color: #000;
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/*****************************************************/
+
+footer {
+    height: 100px;
+    background-color: #d9d9d9;
+    display: flex;
+
+    font-size: 14px;
+    color: #777;
+}
+
+footer .footer-logo {
+    width: 200px;
+}
+
+footer .footer-logo img {
+    height: 40px;
+    margin-top: 30px;
+    display: block;
+}
+
+footer .copy {
+    background-color: #eee;
+    flex-grow: 1;
+}
+
+footer .copy p {
+    margin: 30px 20px 0;
+}
+
+footer .family-site {
+    width: 200px;
+    text-align: center;
+}
+
+footer .family-site select {
+    height: 40px;
+    margin-top: 30px;
+    color: #777;
+}
+

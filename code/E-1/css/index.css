@@ -1,0 +1,437 @@
+@charset "utf-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+/* float해제를 위한 클래스 */
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    /* 보이는 화면 높이로 설정할 때 vh 사용! */
+}
+
+/* 
+vh 단위는 viewport-height
+즉, 보이는 화면의 높이를 사용하는 단위예요. 
+
+html, body에 width:100%; height:100%; 설정하는 것과
+동일한 효과를 낼 수 있어요!
+시험은 어렵게 할 필요없으니 간단하게 단위를 사용하는 걸로 하면 좋을 거예요!
+*/
+
+.top {
+    height: calc(100% - 120px);
+    display: flex;
+
+    /* outline: 2px solid red; */
+}
+
+
+header {
+    width: 200px;
+    background-color: #f3f3f3;
+}
+
+header .logo {
+    padding: 30px 0;
+}
+
+header .logo img {
+    height: 40px;
+    display: block;
+}
+
+header .menu {
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header .menu .gnb {}
+
+header .menu .gnb>li {}
+
+header .menu .gnb>li>a {
+    line-height: 50px;
+    background-color: #D4D2E3;
+    font-size: 18px;
+}
+
+header .menu .gnb>li>a:hover {
+    background-color: #5D5A88;
+    color: #fff;
+    font-weight: bold;
+}
+
+header .menu .lnb {
+    background-color: #fff;
+
+    display: none;
+    /* 구현을 위한 초기설정 */
+}
+
+header .menu .lnb li {
+    line-height: 40px;
+    color: #555;
+    font-size: 16px;
+}
+
+header .menu .lnb li a:hover {
+    background-color: #ccc;
+}
+
+header .spot {
+    padding: 10px;
+    text-align: center;
+}
+
+header .spot a {
+    display: inline-block;
+    font-size: 14px;
+    color: #777;
+}
+
+header .spot a:first-child {
+    margin-right: 6px;
+    border-right: 1px solid #888;
+    padding-right: 10px;
+}
+
+header .spot a:hover {
+    text-decoration: underline;
+}
+
+
+
+section.content {
+    width: 400px;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}
+
+/* 배너(C.1) */
+section.content .banner {
+    background-color: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.banner a {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    /* 위아래 중앙정렬 */
+}
+
+.banner .img-box img {
+    display: block;
+
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    /* 지정한 img 크기가 이미지의 비율을 무시하고 적용될 때, object-fit을 통해 이미지 비율을 유지하고 지정한 img의 너비, 높이에 따라 이미지를 채우거나(cover), div안에 이미지가 전부 보이도록(contain) 할 수 있음. 
+    background-size와 비슷하니 비교하며 보세요!*/
+}
+
+.banner .txt {
+    flex-grow: 1;
+}
+
+.banner .txt h2 {
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+}
+
+.banner .txt p {
+    font-size: 16px;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+    color: #666;
+}
+
+.banner .arrow {
+    flex-grow: 0.2;
+}
+
+
+/* 공지사항, 갤러리 h2, ul 공통 */
+section.content h2.title {
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    padding: 0 20px;
+    color: #fff;
+    background-color: #8D8BA7;
+    border-radius: 10px 10px 0 0;
+}
+
+section.content ul.notice-list,
+section.content ul.gallery-list {
+    border-top: 3px solid #8D8BA7;
+    background-color: #fff;
+}
+
+
+/* 공지사항(C.2) */
+section.content .notice {
+    margin-bottom: 20px;
+}
+.notice .notice-list {
+    font-size: 14px;
+}
+
+.notice .notice-list li {
+    line-height: 40px;
+    border-bottom: 1px solid #ccc;
+}
+
+.notice-list li:nth-child(2n-1) {
+    background-color: #eee;
+}
+
+.notice-list li::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.notice-list li a {
+    width: 75%;
+    float: left;
+
+    /* 게시글 제목이 길 경우를 대비한 설정! 
+    아래 설정이 제대로 적용되려면 width값 설정이 필수!*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notice-list li:hover {
+    background-color: lightgoldenrodyellow;
+}
+
+.notice-list li a:hover {
+    text-decoration: underline;
+}
+
+.notice-list li span {
+    color: #777;
+    float: right;
+}
+
+
+/* 갤러리(C.3) */
+section.content .gallery {
+    margin-bottom: 20px;
+}
+
+.gallery .gallery-list {
+    padding: 10px 0;
+    display: flex;
+    gap: 40px;
+    justify-content: center; /* 가운데 정렬! */
+}
+
+.gallery .gallery-list li {
+    text-align: center;
+}
+
+.gallery .gallery-list li img {
+    width: 130px;
+    display: block;
+}
+.gallery .gallery-list li p {
+    color: #555;
+}
+
+
+/* 바로가기(C.4) */
+section.content .go .hide {
+    display: none;
+    /* 웹접근성을 위해 html 마크업했지만 화면에서는 안 보이게 처리! */
+}
+.go .go-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.go .go-list li {
+    text-align: center;
+}
+.go .go-list li img {
+    width: 60px;
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 6px;
+}
+.go .go-list li p {
+    color: #777;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+
+/* 슬라이드 */
+section.slide {
+    width: calc(100% - 600px);
+    overflow: hidden;
+}
+
+section.slide .viewer {
+    width: 300%;
+    height: 100%;
+}
+
+section.slide .viewer li {
+    width: 33.33%;
+    height: 100%;
+    float: left;
+}
+
+section.slide .viewer li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/*****************************************************/
+
+/* 모달 레이어 팝업 */
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99;
+
+    display: none;
+    /* 구현을 위한 초기설정! */
+}
+
+.modal .modal-content {
+    width: 500px;
+    background-color: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 12px;
+
+    position: absolute;
+    /* .modal 기준으로 위치설정! */
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-align: center;
+}
+
+.modal .modal-content h3 {
+    margin-bottom: 20px;
+}
+
+.modal .modal-content p {
+    margin-bottom: 30px;
+}
+
+.modal .modal-content .btn-close {
+    background-color: #000;
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/*****************************************************/
+
+
+
+footer {
+    height: 120px;
+    background-color: #d9d9d9;
+    display: flex;
+}
+
+footer .footer-logo {
+    width: 200px;
+}
+
+footer .footer-logo img {
+    height: 40px;
+    margin-top: 40px;
+    display: block;
+}
+
+footer .fbox {
+    width: calc(100% - 200px);
+    padding: 0 10px;
+    color: #777;
+    background-color: #eee;
+    font-size: 14px;
+}
+
+footer .fbox ul li {
+    display: inline-block;
+    line-height: 50px;
+    text-transform: uppercase;
+    position: relative; /* 가상요소 after의 기준! */
+}
+footer .fbox ul li~li {
+    padding-left: 12px;
+    margin-left: 10px;
+}
+footer .fbox ul li~li::before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 14px;
+    background-color: #777;
+    position: absolute;
+    left: 0;
+    top: 18px;
+}
+
+footer .fbox ul li a:hover {
+    text-decoration: underline;
+}
+
+footer .fbox p.copy {
+    line-height: 70px;
+}
+
+
+
+
+
+

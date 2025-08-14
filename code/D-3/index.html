@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>푸른마을</title>
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script src="script/index.js"></script>
+</head>
+
+<body>
+
+    <div class="wrap">
+
+        <header>
+            <h1 class="logo"><a href="#"><img src="images/logo.png" alt="푸른마을 로고"></a></h1>
+
+            <nav class="menu">
+
+                <ul class="gnb">
+                    <li><a href="#">OnSale</a></li>
+                    <li><a href="#">기획전</a></li>
+                    <li><a href="#">푸른마을 레시피</a></li>
+                    <li><a href="#">매장안내</a></li>
+                </ul>
+
+                <div class="smenu">
+                    <ul>
+                        <li><a href="#">할인행사</a></li>
+                        <li><a href="#">덤증정</a></li>
+                    </ul>
+
+                    <ul>
+                        <li><a href="#">봄 먹거리</a></li>
+                        <li><a href="#">여름 먹거리</a></li>
+                        <li><a href="#">가을 먹거리</a></li>
+                        <li><a href="#">겨울 먹거리</a></li>
+                    </ul>
+
+                    <ul>
+                        <li><a href="#">메인요리</a></li>
+                        <li><a href="#">밑반찬</a></li>
+                        <li><a href="#">간식</a></li>
+                        <li><a href="#">브런치</a></li>
+                    </ul>
+
+                    <ul>
+                        <li><a href="#">신규매장</a></li>
+                        <li><a href="#">추천매장</a></li>
+                        <li><a href="#">공지사항</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+
+            <div class="spot">
+                <a href="#">로그인</a>
+                <a href="#">회원가입</a>
+            </div>
+        </header>
+
+
+        <section>
+            <!-- 슬라이드 -->
+            <article class="slide">
+                <ul class="viewer">
+                    <li class="active"><img src="images/slide1.jpg" alt="슬라이드1"></li>
+                    <li><img src="images/slide2.jpg" alt="슬라이드2"></li>
+                    <li><img src="images/slide3.jpg" alt="슬라이드3"></li>
+                </ul>
+            </article>
+
+
+            <!-- C.1 바로가기 -->
+            <article class="go">
+                <ul class="go-list">
+                    <li>
+                        <a href="#">
+                            <img src="images/icon.jpg" alt="바로가기1">
+                            <p>Link1</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/icon.jpg" alt="바로가기2">
+                            <p>Link2</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/icon.jpg" alt="바로가기3">
+                            <p>Link3</p>
+                        </a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- C.2 배너 -->
+            <article class="banner">
+                <a href="#">
+                    <div class="img-box"><img src="images/banner.jpg" alt="배너 이미지"></div>
+                    <div class="txt">
+                        <h2>8월 유기농 채소 기획전</h2>
+                        <p>신선하고 건강한 채소, 오늘 주문하면 내일 아침 도착!</p>
+                    </div>
+                    <div class="arrow">
+                        <img src="images/arrow.png" alt="배너 바로가기">
+                    </div>
+                </a>
+            </article>
+
+            <!-- C.3 공지사항/C.4 갤러리 -->
+            <article class="content">
+                <div class="inbox">
+                    <ul class="tab-menu clear">
+                        <li class="active"><a href="#notice">공지사항</a></li>
+                        <li><a href="#gallery">갤러리</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <!-- 공지사항 컨텐츠 -->
+                        <div id="notice" class="notice">
+                            <ul class="notice-list">
+                                <li>
+                                    <a href="#">신선배송 서비스 안내</a>
+                                    <span>2025.08.01</span>
+                                </li>
+                                <li>
+                                    <a href="#">8월 유기농 채소 기획전 진행 안내</a>
+                                    <span>2025.08.01</span>
+                                </li>
+                                <li>
+                                    <a href="#">여름철 신선도 유지 포장 강화 소식</a>
+                                    <span>2025.07.10</span>
+                                </li>
+                                <li>
+                                    <a href="#">푸른마을 농장 무농약 과일 입고 안내</a>
+                                    <span>2025.07.01</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 갤러리 컨텐츠 -->
+                        <div id="gallery" class="gallery">
+                            <ul class="gallery-list clear">
+                                <li>
+                                    <a href="#">
+                                        <img src="images/gallery1.jpg" alt="갤러리사진1">
+                                        <p>여름 먹거리</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/gallery2.jpg" alt="갤러리사진2">
+                                        <p>오늘의 반찬</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/gallery3.jpg" alt="갤러리사진3">
+                                        <p>푸른마을 농장</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+    </div> <!-- //.wrap -->
+
+    <!-- 레이어 팝업 -->
+    <div id="popup">
+        <div class="popup-box">
+            <h3>신선배송 서비스 안내</h3>
+            <p>
+                유기농 마켓은 고객님께 신선함을 전하기 위해 전 상품 주문 당일 수확·포장 후 발송합니다.<br><br>
+                새벽배송 가능 지역: 수도권 전역<br>
+                택배배송 가능 지역: 전국(일부 도서·산간 제외)<br>
+                배송비: 4만원 이상 구매 시 무료<br><br>
+                자세한 내용은 배송 안내 페이지를 확인해 주세요.
+            </p>
+
+            <button class="btn-close">닫기</button>
+        </div>
+    </div>
+
+   
+    <footer>
+        <div class="footer-logo"><img src="images/logo_gray.png" alt="푸른마을 회색로고"></div>
+    
+        <div class="fbox">
+            <ul class="links">
+                <li><a href="#">Footermenu1</a></li>
+                <li><a href="#">Footermenu2</a></li>
+                <li><a href="#">Footermenu3</a></li>
+                <li><a href="#">Footermenu4</a></li>
+                <li><a href="#">Footermenu5</a></li>
+                <li><a href="#">Footermenu6</a></li>
+            </ul>
+    
+            <p class="copy">COPYRIGHT &copy; by WEBDESIGN. ALL RIGHTS RESERVED</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

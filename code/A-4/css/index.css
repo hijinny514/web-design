@@ -1,0 +1,339 @@
+@charset "utf-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+/* float해제를 위한 클래스 */
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+body {
+    color: #333;
+    background-color: #fff;
+}
+
+header {
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+
+    position: relative;
+}
+
+header .logo {
+    float: left;
+}
+
+header .logo a {
+    display: block;
+}
+
+header .logo a img {
+    display: block;
+    height: 40px;
+    margin-top: 40px;
+}
+
+
+header .menu {
+    width: 600px;
+    float: right;
+    text-align: center;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+
+header .menu ul.gnb {}
+
+header .menu ul.gnb>li {
+    float: left;
+    width: 25%;
+}
+
+header .menu ul.gnb>li>a {
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+header .menu ul.gnb>li>a:hover {
+    background-color: #5D5A88;
+    color: #fff;
+}
+
+header .menu .lnb-wrap {
+    /* 서브메뉴의 배경역할! */
+    background-color: #eee;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+
+    z-index: 99;
+    /* section에 position이 사용, 서브메뉴가 등장했을 때 항상 가장 위에 있어야 하므로 z-index 설정! */
+
+    display: none;
+    /* 구현을 위한 초기설정 */
+}
+
+header .menu .lnb-wrap .lnb {
+    width: 600px;
+    /* .menu 너비와 동일하게 설정 */
+    margin-left: 580px;
+    padding: 10px 0;
+}
+
+.lnb ul {
+    width: 25%;
+    float: left;
+}
+
+.lnb ul li {
+    line-height: 40px;
+    color: #555;
+}
+
+.lnb ul li a:hover {
+    background-color: #ccc;
+}
+
+
+
+section.slide {
+    width: 1200px;
+    height: 300px;
+    margin: 0 auto;
+
+    position: relative;
+    /* li의 기준! */
+}
+
+section.slide .viewer {
+    width: 100%;
+}
+
+section.slide .viewer li {
+    width: 100%;
+    position: absolute;
+}
+
+section.slide .viewer li.active {
+    z-index: 1;
+}
+
+section.slide .viewer li img {
+    display: block;
+    width: 100%;
+}
+
+
+section.content {
+    width: 1200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+section.content>div {
+    /* outline: 2px solid red; */
+
+    float: left;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+
+/* 공지사항, 갤러리 h2, ul 공통 */
+section.content>div h2 {
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    display: inline-block;
+    padding: 0 20px;
+    color: #555;
+    box-sizing: border-box;
+}
+
+section.content>div ul {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 140px;
+    box-sizing: border-box;
+}
+
+section.content .notice-box {
+    width: 40%;
+    margin-right: 2%;
+}
+
+.notice-list li {
+    line-height: 30px;
+}
+
+.notice-list li:nth-child(2n) {
+    background-color: #eee;
+}
+
+.notice-list li::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.notice-list li a {
+    float: left;
+}
+
+.notice-list li:hover {
+    background-color: lightgoldenrodyellow;
+}
+
+.notice-list li a:hover {
+    text-decoration: underline;
+}
+
+.notice-list li span {
+    float: right;
+    font-size: 15px;
+    color: #777;
+}
+
+section.content .gallery-box {
+    width: 28%;
+    margin-right: 2%;
+}
+
+
+
+section.content .gallery-box .gallery-list {
+    background-color: #eee;
+    padding: 25px 15px;
+}
+
+section.content .gallery-box .gallery-list li {
+    float: left;
+}
+
+section.content .gallery-box .gallery-list li~li {
+    margin-left: 10px;
+}
+
+section.content .gallery-box .gallery-list li img:hover {
+    opacity: 0.6;
+}
+
+section.content .shortcut {
+    width: 28%;
+    height: 100%;
+}
+
+section.content .shortcut a img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+
+/*****************************************************/
+
+/* 레이어 팝업 */
+#popup {
+    width: 500px;
+    background-color: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    box-shadow: 0 0 8px #999;
+    text-align: center;
+
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 999;
+
+    display: none;
+    /* 구현을 위한 초기설정 */
+}
+
+#popup .popup-box h3 {
+    margin-bottom: 20px;
+}
+
+#popup .popup-box p {
+    margin-bottom: 30px;
+}
+
+#popup .popup-box .btn-close {
+    background-color: #000;
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+/*****************************************************/
+
+
+footer {
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: #d9d9d9;
+    color: #666;
+}
+
+footer .fbox {
+    float: left;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+footer .fbox .fmenu ul li {
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 50px;
+}
+
+footer .fbox .fmenu ul li a:hover {
+    text-decoration: underline;
+}
+
+footer .fbox .copy {
+    line-height: 50px;
+}
+
+footer .family-site {
+    float: right;
+    margin-right: 10px;
+}
+
+footer .family-site select {
+    height: 30px;
+    color: #666;
+    margin-top: 35px;
+}

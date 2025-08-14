@@ -1,0 +1,335 @@
+@charset "utf-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+/* float해제를 위한 클래스 */
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    color: #333;
+    background-color: #fff;
+}
+
+
+.container {
+    width: 1000px;
+
+    /* outline: 2px solid red; */
+}
+
+header {
+    width: 200px;
+    float: left;
+}
+
+header .logo {
+    padding: 30px 0;
+}
+
+header .logo img {
+    height: 40px;
+    display: block;
+}
+
+header .menu {
+    padding: 10px;
+    text-align: center;
+}
+
+header .menu .gnb {
+    position: relative;
+    /* .lnb의 기준! */
+}
+
+header .menu .gnb>li {}
+
+header .menu .gnb>li>a {
+    line-height: 40px;
+    background-color: #D4D2E3;
+}
+
+header .menu .gnb>li>a:hover {
+    background-color: #5D5A88;
+    color: #fff;
+}
+
+header .menu .lnb {
+    background-color: #000;
+    height: 200px;
+
+    position: absolute;
+    width: 100%;
+    /* 기준요소 .gnb의 전체너비를 쓰겠다!! */
+
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+
+    display: none;
+    /* 구현을 위한 초기설정 */
+}
+
+header .menu .lnb li {
+    line-height: 40px;
+    color: #fff;
+    font-size: 14px;
+}
+
+header .menu .lnb li a:hover {
+    background-color: #eee;
+    color: #000;
+}
+
+
+
+.wrap {
+    width: 800px;
+    float: right;
+
+    position: relative;
+    /* #popup의 기준! */
+}
+
+article.slide {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+article.slide .viewer {
+    width: 300%;
+}
+
+article.slide .viewer li {
+    width: 33.33%;
+    float: left;
+}
+
+article.slide .viewer li img {
+    width: 100%;
+    display: block;
+}
+
+
+article.content {
+    width: 100%;
+    height: 200px;
+    /* float된 div의 상위요소에 height값이 설정되었으므로 
+    자동으로 float해제 */
+
+    /* background-color: yellow; */
+}
+
+article.content>div {
+    float: left;
+    margin: 10px 0;
+
+    /* outline: 2px solid red; */
+}
+
+/* 공지사항, 갤러리 h2, ul 공통 */
+article.content>div h2 {
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    display: inline-block;
+    padding: 0 20px;
+    color: #555;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+article.content>div ul {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 140px;
+    box-sizing: border-box;
+}
+
+/* 공지사항(C.1) */
+article.content .notice-box {
+    width: 39%;
+    margin-right: 1%;
+    font-size: 14px;
+}
+
+article.content .notice-box .notice-list {
+    background-color: #fff;
+}
+
+.notice-list li {
+    line-height: 30px;
+}
+
+.notice-list li:nth-child(2n) {
+    background-color: #eee;
+}
+
+.notice-list li::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.notice-list li a {
+    display: inline-block;
+}
+
+.notice-list li:hover {
+    background-color: lightgoldenrodyellow;
+}
+
+.notice-list li a:hover {
+    text-decoration: underline;
+}
+
+.notice-list li span {
+    float: right;
+    color: #777;
+}
+
+/* 갤러리(C.2) */
+article.content .gallery-box {
+    width: 39%;
+    margin-right: 1%;
+}
+
+article.content .gallery-box .gallery-list {
+    background-color: #fff;
+    padding: 25px 10px;
+}
+
+article.content .gallery-box .gallery-list li {
+    float: left;
+}
+
+article.content .gallery-box .gallery-list li~li {
+    margin-left: 10px;
+}
+
+article.content .gallery-box .gallery-list li img:hover {
+    opacity: 0.7;
+}
+
+/* 배너(C.3) */
+article.content .banner {
+    width: 20%;
+}
+
+article.content .banner a img {
+    height: 180px;
+    border-radius: 12px;
+    display: block;
+}
+
+
+/*****************************************************/
+
+/* 레이어팝업 */
+#popup {
+    width: 500px;
+    background-color: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    box-shadow: 0 0 8px #999;
+    text-align: center;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 99;
+
+    display: none;
+    /* 구현을 위한 초기설정 */
+}
+
+#popup .popup-box h3 {
+    margin-bottom: 20px;
+}
+
+#popup .popup-box p {
+    margin-bottom: 30px;
+}
+
+#popup .popup-box .btn-close {
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+/*****************************************************/
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: #d9d9d9;
+    color: #777;
+}
+
+footer .footer-logo {
+    float: left;
+}
+
+footer .footer-logo img {
+    height: 40px;
+    margin-top: 30px;
+    display: block;
+}
+
+footer .fbox {
+    float: right;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+footer .fbox .fmenu {}
+
+footer .fbox .fmenu ul {
+    text-align: right;
+}
+
+footer .fbox .fmenu ul li {
+    display: inline-block;
+    line-height: 50px;
+    margin-left: 10px;
+}
+
+footer .fbox .fmenu ul li a:hover {
+    text-decoration: underline;
+}
+
+footer .fbox .copy {
+    line-height: 50px;
+}
