@@ -1,0 +1,443 @@
+@charset "utf-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+/* float해제를 위한 클래스 */
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    color: #333;
+    background-color: #fff;
+}
+
+header {
+    width: 1340px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+header .logo {
+    padding: 30px 0;
+    float: left;
+}
+
+header .logo img {
+    height: 40px;
+    display: block;
+}
+
+header .menu {
+    float: right;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+
+header .menu .gnb>li {
+    float: left;
+    width: 180px;
+    text-align: center;
+
+    position: relative;
+    /* .lnb의 기준! */
+}
+
+header .menu .gnb>li>a {
+    line-height: 60px;
+    font-size: 18px;
+}
+
+header .menu .gnb>li:hover {
+    background-color: #5D5A88;
+}
+
+header .menu .gnb>li:hover>a {
+    color: #fff;
+    font-weight: bold;
+}
+
+header .menu .lnb {
+    background-color: #eee;
+
+    position: absolute;
+    width: 100%;
+
+    z-index: 999;
+    /* 다음 영역 슬라이드에 fade슬라이드 구현을 위해 z-index 설정이 되어 있어서 
+    .lnb에 z-index가 없으면 슬라이드에 가려져 보이지 않으므로 z-index 설정 필요! */
+
+    display: none;
+    /* 구현을 위한 초기설정! */
+}
+
+header .menu .lnb li {
+    line-height: 40px;
+    color: #555;
+}
+
+header .menu .lnb li a:hover {
+    background-color: #ccc;
+}
+
+
+/*  슬라이드 */
+main.slide {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    /* li의 기준! */
+}
+
+main.slide .viewer {
+    width: 100%;
+    height: 100%;
+}
+
+main.slide .viewer li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+main.slide .viewer li.active {
+    z-index: 1;
+}
+
+main.slide .viewer li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+section {
+    width: 1340px;
+    margin: 0 auto;
+
+    position: relative;
+    /* article.go의 기준! */
+}
+
+/* 바로가기(C.1) */
+article.go {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    position: absolute;
+    top: -100px;
+    z-index: 99;
+}
+
+/* 
+'바로가기 영역'이 슬라이드 위쪽에 겹치도록 배치되게 하려면,
+section 전체를 위로 이동시키는 것이 아니라 
+section을 기준(relative)으로 '바로가기 영역'만 절대위치(absolute)를 설정해야 합니다.
+
+section에 relative로 section의 위치를 조절하게 되면 위로 이동한 공간만큼 section 아래에 여백처럼 남아요.
+
+absolute는 기준요소 안에서 자신의 공간을 남기지 않기 때문에 기준요소 밖으로 위치하게 좌표를 설정하면 
+section(기준요소)은 자신을 벗어난 바로가기 영역의 크기를 갖지 않고 배너와 공지사항/갤러리의 공간만큼만 높이로 갖게 됩니다.
+*/
+
+article.go .go-list {
+    height: 100%;
+    /* 위/아래 중앙정렬을 위해 높잇값 부여! */
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    /* 좌우 중앙정렬 */
+    align-items: center;
+    /* 주어진 높이에서 위/아래 중앙정렬 */
+}
+
+article.go .go-list li {}
+
+article.go .go-list li img {
+    width: 60px;
+    border-radius: 8px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+article.go .go-list li p {
+    color: #777;
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/* 배너(C.2) */
+article.banner {
+    width: 100%;
+    height: 200px;
+    background-color: #eee;
+}
+
+article.banner a {
+    padding: 30px 50px;
+    display: flex;
+    /* a안에 있는 img-box/txt/arrow를 flex 처리하겠다는 의미! */
+
+    gap: 60px;
+    align-items: center;
+    /* 위아래 중앙정렬 */
+}
+
+article.banner .img-box img {
+    display: block;
+    height: 140px;
+    /* banner에 높이가 설정되었고 너비는 유동적으로 조절될 공간이 충분하므로, '고정된' 높잇값 기준으로 이미지 크기 조절! */
+    border-radius: 10px;
+}
+
+article.banner .txt {
+    flex-grow: 1;
+}
+
+article.banner .txt h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+article.banner .txt p {
+    font-size: 20px;
+    color: #666;
+}
+
+
+/* 공지사항/갤러리 탭메뉴 */
+article.content {
+    width: 50%;
+    height: 300px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+article.content .tab-menu {
+    margin-left: 20px;
+}
+
+article.content .tab-menu li {
+    float: left;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    background-color: #fff;
+
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+}
+
+article.content .tab-menu li:first-child {
+    border-left: 1px solid #ccc;
+}
+
+/* 선택된 탭메뉴 디자인 변경 */
+article.content .tab-menu li.active {
+    background-color: #9795b5;
+    color: #fff;
+    font-weight: bold;
+}
+
+article.content .tab-content {
+    border: 1px solid #ccc;
+    padding: 15px 20px;
+    height: 190px;
+    /* 실제사용할 수 있는 높이 160px */
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+
+/* 공지사항(C.3) */
+article.content .tab-content .notice {
+    /* display: none; */
+}
+
+.notice .notice-list li {
+    line-height: 40px;
+    border-bottom: 1px dashed #ccc;
+    color: #555;
+}
+
+.notice .notice-list li::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.notice .notice-list li a {
+    float: left;
+}
+
+.notice .notice-list li span {
+    float: right;
+    color: #888;
+}
+
+/* 게시글 제목 hover 디자인 */
+.notice .notice-list li:hover {
+    background-color: lightgoldenrodyellow;
+}
+
+.notice .notice-list li a:hover {
+    text-decoration: underline;
+}
+
+
+/* 갤러리(C.4) */
+article.content .tab-content .gallery {
+    display: none;
+    /* 구현을 위한 초기설정! */
+}
+
+.gallery .gallery-list {
+    margin-top: 20px;
+}
+
+.gallery .gallery-list li {
+    float: left;
+}
+
+.gallery .gallery-list li~li {
+    margin-left: 20px;
+}
+
+.gallery .gallery-list li img {
+    height: 120px;
+    display: block;
+}
+
+
+/*****************************************************/
+
+/* 레이어팝업 */
+#popup {
+    width: 500px;
+    background-color: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    box-shadow: 0 0 8px #999;
+    text-align: center;
+
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+
+    z-index: 999;
+
+    display: none;
+    /* 구현을 위한 초기설정 */
+}
+
+#popup .popup-box h3 {
+    margin-bottom: 20px;
+}
+
+#popup .popup-box p {
+    margin-bottom: 30px;
+}
+
+#popup .popup-box .btn-close {
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/*****************************************************/
+
+
+footer {
+    width: 1340px;
+    margin: 0 auto;
+    height: 120px;
+    background-color: #d9d9d9;
+    display: flex;
+}
+
+footer .footer-logo {
+    width: 200px;
+}
+
+footer .footer-logo img {
+    height: 40px;
+    margin-top: 40px;
+    display: block;
+}
+
+footer .fbox {
+    width: calc(100% - 200px);
+    padding: 0 10px;
+    background-color: #eee;
+
+    font-size: 14px;
+    color: #777;
+}
+
+footer .fbox ul {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+footer .fbox ul li {
+    display: inline-block;
+    line-height: 50px;
+    text-transform: uppercase;
+    position: relative;
+    /* 가상요소 after의 기준! */
+}
+
+footer .fbox ul li~li {
+    padding-left: 12px;
+    margin-left: 8px;
+}
+
+footer .fbox ul li~li::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 14px;
+    background-color: #999;
+    position: absolute;
+    left: 0;
+    top: 18px;
+}
+
+footer .fbox ul li a:hover {
+    text-decoration: underline;
+}

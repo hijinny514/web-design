@@ -1,0 +1,57 @@
+//index.js
+
+//메뉴
+$(function () {
+    $('.gnb > li').mouseenter(function(){
+        $(this).children('.lnb').stop().slideDown();
+    }).mouseleave(function(){
+        $('.lnb').stop().slideUp();
+    });
+});
+
+
+//자동 슬라이드
+$(function () {
+    setInterval(fadeSlide, 3000);
+});
+
+//슬라이드 구현 함수 
+function fadeSlide() {
+    var fSlide = $('.viewer li').first();
+    var nSlide = fSlide.next();
+
+    nSlide.hide().addClass('active').fadeIn(800, function () {
+        $('.viewer').append(fSlide);
+        fSlide.removeClass('active');
+    });
+}
+
+
+//탭메뉴 구현
+$(function () {
+    $('.tab-menu a').click(function (e) {
+        e.preventDefault();
+
+        //클릭된 탭메뉴의 디자인 변경 
+        $(this).parent().addClass('active').siblings().removeClass('active');
+
+        //탭 컨텐츠 변경
+        var tabId = $(this).attr('href');
+
+        $(tabId).show().siblings().hide();
+
+    });
+});
+
+
+// 레이어팝업
+$(function () {
+    $('.notice-list li:first a').click(function (e) {
+        e.preventDefault();
+        $('#popup').show();
+    });
+
+    $('.btn-close').click(function () {
+        $('#popup').hide();
+    });
+});

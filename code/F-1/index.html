@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>주식회사 기능건설</title>
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script src="script/index.js"></script>
+</head>
+
+<body>
+
+    <header class="clear">
+        <h1 class="logo"><a href="#"><img src="images/logo.png" alt="(주)기능건설 로고"></a></h1>
+
+        <nav class="menu">
+            <ul class="gnb">
+                <li>
+                    <a href="#">회사소개</a>
+                    <ul class="lnb">
+                        <li><a href="#">기업정보</a></li>
+                        <li><a href="#">CEO인사말</a></li>
+                        <li><a href="#">연혁</a></li>
+                        <li><a href="#">조직도</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">지속가능경영</a>
+                    <ul class="lnb">
+                        <li><a href="#">윤리경영</a></li>
+                        <li><a href="#">품질경영</a></li>
+                        <li><a href="#">안전경영</a></li>
+                        <li><a href="#">환경경영</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">사업분야</a>
+                    <ul class="lnb">
+                        <li><a href="#">건축사업</a></li>
+                        <li><a href="#">토목사업</a></li>
+                        <li><a href="#">주택사업</a></li>
+                        <li><a href="#">환경/플랜트</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">홍보센터</a>
+                    <ul class="lnb">
+                        <li><a href="#">뉴스</a></li>
+                        <li><a href="#">분양뉴스</a></li>
+                        <li><a href="#">CI/BI</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- 슬라이드 -->
+    <main class="slide">
+        <ul class="viewer">
+            <li class="active"><img src="images/slide1.jpg" alt="슬라이드1"></li>
+            <li><img src="images/slide2.jpg" alt="슬라이드2"></li>
+            <li><img src="images/slide3.jpg" alt="슬라이드3"></li>
+        </ul>
+    </main>
+
+
+    <section>
+
+        <!-- C.1 바로가기 -->
+        <article class="go">
+            <ul class="go-list">
+                <li>
+                    <a href="#">
+                        <img src="images/icon.jpg" alt="바로가기1">
+                        <p>Link1</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/icon.jpg" alt="바로가기2">
+                        <p>Link2</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/icon.jpg" alt="바로가기3">
+                        <p>Link3</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/icon.jpg" alt="바로가기4">
+                        <p>Link4</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/icon.jpg" alt="바로가기5">
+                        <p>Link5</p>
+                    </a>
+                </li>
+            </ul>
+        </article>
+
+        <!-- C.2 배너 -->
+        <article class="banner">
+            <a href="#">
+                <div class="img-box"><img src="images/banner.jpg" alt="배너 이미지"></div>
+                <div class="txt">
+                    <h2>미래를 설계하는 건설</h2>
+                    <p>지속가능한 도시와 산업을 만드는 기능건설입니다</p>
+                </div>
+                <div class="arrow">
+                    <img src="images/arrow.png" alt="배너 바로가기">
+                </div>
+            </a>
+        </article>
+
+        <!-- C.3 공지사항/C.4 갤러리 -->
+        <article class="content">
+
+            <ul class="tab-menu clear">
+                <li class="active"><a href="#notice">공지사항</a></li>
+                <li><a href="#gallery">갤러리</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <!-- 공지사항 컨텐츠 -->
+                <div id="notice" class="notice">
+                    <ul class="notice-list">
+                        <li>
+                            <a href="#">기능건설 온라인 기념관 개관 안내</a>
+                            <span>2025.08.10</span>
+                        </li>
+                        <li>
+                            <a href="#">기능건설, 지속가능경영보고서 발간</a>
+                            <span>2025.08.01</span>
+                        </li>
+                        <li>
+                            <a href="#">2025년 상반기 주요 프로젝트 완공 소식</a>
+                            <span>2025.07.10</span>
+                        </li>
+                        <li>
+                            <a href="#">친환경 건축자재 도입 안내</a>
+                            <span>2025.07.01</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 갤러리 컨텐츠 -->
+                <div id="gallery" class="gallery">
+                    <ul class="gallery-list clear">
+                        <li><a href="#"><img src="images/gallery1.jpg" alt="갤러리사진1"></a></li>
+                        <li><a href="#"><img src="images/gallery2.jpg" alt="갤러리사진2"></a></li>
+                        <li><a href="#"><img src="images/gallery3.jpg" alt="갤러리사진3"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </section>
+
+
+    <!-- 레이어 팝업 -->
+    <div id="popup">
+        <div class="popup-box">
+            <h3>기능건설 30주년 기념관 오픈</h3>
+            <p>
+                기능건설의 발자취와 주요 프로젝트를 한눈에 볼 수 있는<br> 온라인 기념관을 오픈했습니다.<br>
+                방문하셔서 기능건설의 역사와 비전을 확인해 보세요.
+            </p>
+
+            <button class="btn-close">닫기</button>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-logo"><img src="images/logo_gray.png" alt="(주)기능건설 회색로고"></div>
+
+        <div class="fbox">
+            <ul class="links">
+                <li><a href="#">Footermenu1</a></li>
+                <li><a href="#">Footermenu2</a></li>
+                <li><a href="#">Footermenu3</a></li>
+                <li><a href="#">Footermenu4</a></li>
+                <li><a href="#">Footermenu5</a></li>
+                <li><a href="#">Footermenu6</a></li>
+            </ul>
+
+            <p class="copy">COPYRIGHT &copy; by WEBDESIGN. ALL RIGHTS RESERVED</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

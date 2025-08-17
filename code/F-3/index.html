@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>오픈뱅킹</title>
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script src="script/index.js"></script>
+</head>
+
+<body>
+
+    <header class="clear">
+        <div class="inbox clear">
+            <h1 class="logo"><a href="#"><img src="images/logo.png" alt="오픈뱅킹 로고"></a></h1>
+
+            <nav class="menu">
+                <div class="menu-bg"></div>
+                <!-- 
+                .menu-bg >> 서브메뉴 배경으로 사용할 태그!
+                
+                A-2유형에서도 이 구조로 html 작성했으나 .menu-bg 위치가 다르니 비교해서 보세요!
+                --> 
+
+                <ul class="gnb">
+                    <li>
+                        <a href="#">조회</a>
+                        <ul class="lnb">
+                            <li><a href="#">계좌조회</a></li>
+                            <li><a href="#">거래내역조회</a></li>
+                            <li><a href="#">휴먼계좌 조회</a></li>
+                            <li><a href="#">수표/어음 조회</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">이체</a>
+                        <ul class="lnb">
+                            <li><a href="#">계좌이체</a></li>
+                            <li><a href="#">다계좌이체</a></li>
+                            <li><a href="#">자동이체</a></li>
+                            <li><a href="#">예약이체</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">공과금</a>
+                        <ul class="lnb">
+                            <li><a href="#">지로/생활요금</a></li>
+                            <li><a href="#">지방세</a></li>
+                            <li><a href="#">국세/관세</a></li>
+                            <li><a href="#">벌칙금/벌과금</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">외환</a>
+                        <ul class="lnb">
+                            <li><a href="#">금리</a></li>
+                            <li><a href="#">환율/외화예금</a></li>
+                            <li><a href="#">글로벌뱅킹</a></li>
+                            <li><a href="#">외화송금</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- 슬라이드 -->
+    <main class="slide">
+        <ul class="viewer clear">
+            <li><img src="images/slide1.jpg" alt="슬라이드1"></li>
+            <li><img src="images/slide2.jpg" alt="슬라이드2"></li>
+            <li><img src="images/slide3.jpg" alt="슬라이드3"></li>
+        </ul>
+    </main>
+
+
+    <section>
+
+        <!-- C.1 바로가기 -->
+        <article class="go">
+            <ul class="go-list">
+                <li>
+                    <a href="#">
+                        <img src="images/icon.jpg" alt="바로가기1">
+                        <p>Link1</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/icon.jpg" alt="바로가기2">
+                        <p>Link2</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/icon.jpg" alt="바로가기3">
+                        <p>Link3</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/icon.jpg" alt="바로가기4">
+                        <p>Link4</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/icon.jpg" alt="바로가기5">
+                        <p>Link5</p>
+                    </a>
+                </li>
+            </ul>
+        </article>
+
+        <!-- C.2 배너 -->
+        <article class="banner">
+            <a href="#">
+                <div class="img-box"><img src="images/banner.jpg" alt="배너 이미지"></div>
+                <div class="txt">
+                    <h2>하나의 로그인, 모든 은행 업무 해결</h2>
+                    <p>오픈뱅킹으로 더 쉽고 빠르게 처리하세요</p>
+                </div>
+                <div class="arrow">
+                    <img src="images/arrow.png" alt="배너 바로가기">
+                </div>
+            </a>
+        </article>
+
+        <!-- C.3 공지사항/C.4 갤러리 -->
+        <article class="content">
+
+            <ul class="tab-menu clear">
+                <li class="active"><a href="#notice">공지사항</a></li>
+                <li><a href="#gallery">갤러리</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <!-- 공지사항 컨텐츠 -->
+                <div id="notice" class="notice">
+                    <ul class="notice-list">
+                        <li>
+                            <a href="#">오픈뱅킹 신규 서비스 오픈 안내</a>
+                            <span>2025.08.10</span>
+                        </li>
+                        <li>
+                            <a href="#">고령자 전용 상담 서비스 개설</a>
+                            <span>2025.08.01</span>
+                        </li>
+                        <li>
+                            <a href="#">보안 강화: OTP 및 생체인증 도입</a>
+                            <span>2025.07.10</span>
+                        </li>
+                        <li>
+                            <a href="#">오픈뱅킹 모바일 앱 출시 소식</a>
+                            <span>2025.07.01</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 갤러리 컨텐츠 -->
+                <div id="gallery" class="gallery">
+                    <ul class="gallery-list clear">
+                        <li><a href="#"><img src="images/gallery1.jpg" alt="갤러리사진1"></a></li>
+                        <li><a href="#"><img src="images/gallery2.jpg" alt="갤러리사진2"></a></li>
+                        <li><a href="#"><img src="images/gallery3.jpg" alt="갤러리사진3"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </section>
+
+
+    <!-- 레이어 팝업 -->
+    <div id="popup">
+        <div class="popup-box">
+            <h3>오픈뱅킹 서비스 시작 안내</h3>
+            <p>
+                여러 은행 계좌를 한 번에 조회하고 이체할 수 있습니다.<br>
+                지금 바로 오픈뱅킹 서비스를 이용해 보세요.
+            </p>
+
+            <button class="btn-close">닫기</button>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-logo"><img src="images/logo_gray.png" alt="오픈뱅킹 회색로고"></div>
+
+        <div class="fbox">
+            <ul class="links">
+                <li><a href="#">Footermenu1</a></li>
+                <li><a href="#">Footermenu2</a></li>
+                <li><a href="#">Footermenu3</a></li>
+                <li><a href="#">Footermenu4</a></li>
+                <li><a href="#">Footermenu5</a></li>
+                <li><a href="#">Footermenu6</a></li>
+            </ul>
+
+            <p class="copy">COPYRIGHT &copy; by WEBDESIGN. ALL RIGHTS RESERVED</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
